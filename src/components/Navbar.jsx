@@ -1,5 +1,6 @@
 import React from 'react';
-import { BiSolidSun,BiSolidMoon } from "react-icons/bi";
+import { BiSolidSun, BiSolidMoon, } from "react-icons/bi";
+import { FaSearch } from "react-icons/fa";
 const NavLinks = [
     {
         id :"1",
@@ -31,7 +32,11 @@ const Navbar = ({theme,setTheme}) => {
                   <div>
                       <h1 className="text-3xl font-serif font-bold  hover:p-2 hover:text-4xl duration-350">Car<span className='text-yellow-400'>Z</span></h1>
                   </div>
-                  <div className='flex items-center gap-5'>
+                  <div className='flex items-center gap-5 '>
+                      <div class="flex items-center gap-5 rounded-full border-black border-2 px-3 py-2 group dark:border-white" >
+                          <input type="text" placeholder='Search Cars' class="w-21 dark:bg-black hidden group-hover:inline-block transition-all duration-500 focus:outline-none" />
+                          <FaSearch class="font-bold text-lg"/>
+                      </div>
                   <div className='hiden md:block'>
                       <ul className='flex items-center justify-between gap-8'>
                           {

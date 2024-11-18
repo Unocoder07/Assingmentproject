@@ -3,7 +3,10 @@ import React, { useState,useEffect } from "react";
 import "./index.css";
 import './App.css';
 import Navbar from "./components/Navbar.jsx";
+import Hero from "./components/Hero.jsx";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   // Dark Mode Feature
@@ -20,12 +23,22 @@ function App() {
       element.classList.remove("dark");
       localStorage.setItem("theme", "dark");
     }
-  },[theme])
+  }, [theme]);
+  React.useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 800,
+      easing: "ease-in-sine",
+      delay: 100
+    });
+    AOS.refresh()
+  },[])
   return (
     <div >
       <Navbar theme={theme} setTheme={setTheme}>
 
       </Navbar>
+      <Hero theme={theme}></Hero>
     </div>
   );
 }
