@@ -23,7 +23,7 @@ function App() {
       element.classList.remove("dark");
       localStorage.setItem("theme", "dark");
     }
-  }, [theme]);
+  }, [theme]);  
   React.useEffect(() => {
     AOS.init({
       offset: 100,
@@ -35,10 +35,8 @@ function App() {
   },[])
   return (
     <div >
-      <Navbar theme={theme} setTheme={setTheme}>
-
-      </Navbar>
-      <Hero theme={theme}></Hero>
+      <Navbar theme={theme} setTheme={setTheme}/>
+      <Hero theme={theme}/>
     </div>
   );
 }
